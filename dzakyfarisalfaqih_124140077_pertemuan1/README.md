@@ -16,6 +16,7 @@ Aplikasi ini digunkan untuk melakukan simulasi kasir toko. Kasir bisa memasukkan
 
 ```bash
 git clone https://github.com/dzhark12/pemrograman_web_itera_124140077.git
+cd pemrograman_web_itera_124140077
 cd dzakyfarisalfaqih_124140077_dzakyfarisalfaqih_124140077_pertemuan1
 ./index.html
 ```
