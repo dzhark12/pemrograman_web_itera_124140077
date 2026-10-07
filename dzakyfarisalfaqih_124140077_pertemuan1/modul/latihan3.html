@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+</head>
+
+<body>
+    <h1>Data Mahasiswa</h1>
+
+    <form id="form-mahasiswa">
+        <label>Nama:
+            <input id="nama-mahasiswa" type="text" required>
+        </label>
+        <br>
+
+        <label>NIM:
+            <input id="nim-mahasiswa" type="text" required>
+        </label>
+        <br>
+
+        <label>Jurusan:
+            <input id="jurusan-mahasiswa" type="text" required>
+        </label>
+        <br>
+
+        <label>Nilai:
+            <input id="nilai-mahasiswa" type="number" min="0" max="100" required>
+        </label>
+        <br>
+
+        <button type="submit">Simpan</button>
+        <button id="batal-edit" type="button" hidden>Batal Edit</button>
+    </form>
+
+    <h2>Daftar Mahasiswa</h2>
+
+    <label>Urutkan nama:
+        <select id="urutan-nama">
+            <option value="asc">A–Z</option>
+            <option value="desc">Z–A</option>
+        </select>
+    </label>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Jurusan</th>
+                <th>Nilai</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-mahasiswa"></tbody>
+    </table>
+
+    <p>Nilai tertinggi: <span id="nilai-tertinggi"></span></p>
+    <p>Di atas rata-rata: <span id="mahasiswa-di-atas-rata-rata"></span></p>
+
+    <script src="latihan3.js"></script>
+</body>
+
+</html>
