@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kerangka tugas praktikum aplikasi kasir Mini POS." />
+    <title>Mini POS — Tugas Praktikum JavaScript Dasar</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="eyebrow">Praktikum JavaScript Dasar</p>
+        <h1>Kasir Mini POS</h1>
+        <p>Website ini adalah aplikasi kasir sederhana berbasis web.</p>
+    </header>
+
+    <main class="pos-layout">
+        <section class="panel" aria-labelledby="form-title">
+            <h2 id="form-title">Tambah barang</h2>
+            <form id="item-form" novalidate>
+                <div class="form-field">
+                    <label for="item-name">Nama barang</label>
+                    <input id="item-name" name="itemName" type="text" />
+                    <small class="field-error" id="item-name-error" aria-live="polite">
+                    </small>
+                </div>
+
+                <div class="form-field">
+                    <label for="item-price">Harga satuan (Rupiah)</label>
+                    <input id="item-price" name="itemPrice" type="number" />
+                    <small class="field-error" id="item-price-error" aria-live="polite">
+                    </small>
+                </div>
+
+                <div class="form-field">
+                    <label for="item-quantity">Jumlah barang (qty)</label>
+                    <input id="item-quantity" name="itemQuantity" type="number" />
+                    <small class="field-error" id="item-quantity-error" aria-live="polite">
+                    </small>
+                </div>
+
+                <button type="submit">Tambah ke keranjang</button>
+            </form>
+        </section>
+
+        <section class="panel cart-panel" aria-labelledby="cart-title">
+            <h2 id="cart-title">Keranjang belanja</h2>
+            <div class="table-scroll">
+                <table>
+                    <caption>Daftar barang yang dibeli</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nama barang</th>
+                            <th scope="col">Harga satuan</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <dl class="summary">
+                <div>
+                    <dt>Total belanja</dt>
+                    <dd id="subtotal-total">Rp0</dd>
+                </div>
+                <div>
+                    <dt>Diskon</dt>
+                    <dd id="discount-total">Rp0</dd>
+                </div>
+                <div class="summary-final">
+                    <dt>Total akhir</dt>
+                    <dd id="final-total">Rp0</dd>
+                </div>
+            </dl>
+
+            <div class="form-field payment-field">
+                <label for="payment-amount">Uang bayar (Rupiah)</label>
+                <input id="payment-amount" name="paymentAmount" type="number" />
+                <p id="payment-message" aria-live="polite">
+                </p>
+            </div>
+
+            <button id="new-transaction" class="button-secondary" type="button">
+                Transaksi baru / kosongkan keranjang
+            </button>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>Nama: Dzaky Faris Al Faqih | NIM: 124140077</p>
+    </footer>
+</body>
+
+</html>
