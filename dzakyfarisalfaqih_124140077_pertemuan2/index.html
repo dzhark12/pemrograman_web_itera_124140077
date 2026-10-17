@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e1e2e" />
+    <title>Ruang Kuliah — Agenda ITERA</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="shell">
+        <header class="topbar">
+            <a class="brand" href="#top" aria-label="Ruang Kuliah, beranda">
+                <span class="brand-mark" aria-hidden="true">rk</span>
+                <span>ruang<span class="brand-accent">kuliah</span></span>
+            </a>
+            <p class="topbar-note">ruang kecil untuk rencana yang lebih teratur</p>
+        </header>
+
+        <main id="top">
+            <section class="intro" aria-labelledby="page-title">
+                <div>
+                    <p class="eyebrow">DASHBOARD MAHASISWA · ITERA</p>
+                    <h1 id="page-title">Atur ritme kuliahmu<span class="period">.</span></h1>
+                    <p class="intro-copy">Lihat kelas hari ini, sisihkan waktu untuk tugas, dan jalani satu hal pada
+                        satu waktu.
+                    </p>
+                </div>
+                <div class="date-chip" aria-label="Tanggal hari ini">
+                    <svg class="date-chip-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="8.5" />
+                        <path d="M12 7v5l3.5 2" />
+                    </svg>
+                    <span id="todayLabel">Agenda harian</span>
+                </div>
+            </section>
+
+            <section class="widgets" aria-label="Info hari ini">
+                <article class="widget quote-widget">
+                    <div class="widget-heading">
+                        <span class="widget-icon quote-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                <path d="M5 11h5v8H4v-7c0-4 2-6 5-7M15 11h5v8h-6v-7c0-4 2-6 5-7" />
+                            </svg></span>
+                        <div>
+                            <p class="eyebrow">CATATAN HARI INI</p>
+                            <h2>Pengingat kecil</h2>
+                        </div>
+                    </div>
+                    <p id="quoteText" class="quote-text">Semua akan mudah setelah sulit</p>
+                </article>
+
+                <article class="widget weather-widget">
+                    <div class="widget-heading">
+                        <span class="widget-icon weather-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="4" />
+                                <path
+                                    d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+                            </svg></span>
+                        <div>
+                            <p class="eyebrow">CUACA KAMPUS</p>
+                            <h2>ITERA · Lampung Selatan</h2>
+                        </div>
+                    </div>
+                    <p id="weatherText" class="weather-reading" role="status" aria-live="polite">Memuat cuaca...</p>
+                    <p id="weatherDetail" class="widget-caption"></p>
+                </article>
+            </section>
+
+            <section class="agenda panel" aria-labelledby="agendaHeading">
+                <div class="section-heading agenda-heading">
+                    <div>
+                        <p class="eyebrow">RUANG WAKTUMU</p>
+                        <h2 id="agendaHeading">Agenda harian</h2>
+                        <p id="selectedDateLabel" class="section-subtitle"></p>
+                    </div>
+                    <div class="date-controls" aria-label="Navigasi tanggal agenda">
+                        <button class="icon-button" id="previousDate" type="button"
+                            aria-label="Hari sebelumnya">←</button>
+                        <button class="today-button" id="goToday" type="button">Hari ini</button>
+                        <input id="datePicker" type="date" aria-label="Pilih tanggal agenda" />
+                        <button class="icon-button" id="nextDate" type="button" aria-label="Hari berikutnya">→</button>
+                    </div>
+                </div>
+                <p id="agendaNotice" class="notice" role="status" aria-live="polite"></p>
+                <div id="agendaList" class="agenda-list" aria-live="polite"></div>
+            </section>
+
+            <section class="forms-grid" aria-label="Kelola jadwal dan sesi tugas">
+                <article class="panel form-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">BERULANG SETIAP MINGGU</p>
+                            <h2>Jadwal kuliah</h2>
+                        </div>
+                        <span class="section-mark course-mark" aria-hidden="true">01</span>
+                    </div>
+                    <form id="courseForm" class="entry-form">
+                        <label>Nama mata kuliah<input name="name" required maxlength="70"
+                                placeholder="Contoh: Pemrograman Aplikasi Web" /></label>
+                        <div class="field-row">
+                            <label>Hari
+                                <select name="day" required>
+                                    <option value="1">Senin</option>
+                                    <option value="2">Selasa</option>
+                                    <option value="3">Rabu</option>
+                                    <option value="4">Kamis</option>
+                                    <option value="5">Jumat</option>
+                                    <option value="6">Sabtu</option>
+                                    <option value="0">Minggu</option>
+                                </select>
+                            </label>
+                            <label>Ruang (opsional)<input name="room" maxlength="30"
+                                    placeholder="Lab / kelas" /></label>
+                        </div>
+                        <div class="field-row">
+                            <label>Mulai<input name="start" type="time" required /></label>
+                            <label>Selesai<input name="end" type="time" required /></label>
+                        </div>
+                        <div class="form-actions">
+                            <button class="primary-button" type="submit">Tambah jadwal</button>
+                            <button class="text-button" type="button" data-cancel="course" hidden>Batal edit</button>
+                        </div>
+                        <p id="courseFormNotice" class="form-notice" role="status" aria-live="polite"></p>
+                    </form>
+                </article>
+
+                <article class="panel form-panel task-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">WAKTU FOKUSMU</p>
+                            <h2>Sesi mengerjakan tugas</h2>
+                        </div>
+                        <span class="section-mark task-mark" aria-hidden="true">02</span>
+                    </div>
+                    <form id="taskForm" class="entry-form">
+                        <label>Nama tugas<input name="title" required maxlength="90"
+                                placeholder="Contoh: Laporan praktikum" /></label>
+                        <label>Mata kuliah<input name="course" required maxlength="70"
+                                placeholder="Contoh: Basis Data" /></label>
+                        <label>Tanggal<input name="date" type="date" required /></label>
+                        <div class="field-row">
+                            <label>Mulai<input name="start" type="time" required /></label>
+                            <label>Selesai<input name="end" type="time" required /></label>
+                        </div>
+                        <label>Link pengumpulan <span class="optional">opsional</span><input name="link" type="url"
+                                placeholder="https://..." /></label>
+                        <div class="form-actions">
+                            <button class="primary-button task-button" type="submit">Tambah sesi</button>
+                            <button class="text-button" type="button" data-cancel="task" hidden>Batal edit</button>
+                        </div>
+                        <p id="taskFormNotice" class="form-notice" role="status" aria-live="polite"></p>
+                    </form>
+                </article>
+            </section>
+        </main>
+
+        <dialog id="deleteDialog" class="confirm-dialog" aria-labelledby="deleteDialogHeading"
+            aria-describedby="deleteDialogMessage">
+            <p class="eyebrow">KONFIRMASI</p>
+            <h2 id="deleteDialogHeading">Hapus dari agenda?</h2>
+            <p id="deleteDialogMessage">Item ini akan dihapus dari agenda.</p>
+            <div class="dialog-actions">
+                <button class="text-button" type="button" data-cancel-delete>Batal</button>
+                <button class="small-button delete" type="button" data-confirm-delete>Hapus</button>
+            </div>
+        </dialog>
+
+        <footer class="footer"><span>dibuat untuk hari-hari kuliah yang lebih ringan</span><span>Dzaky Faris Al Faqih |
+                124140077</span></footer>
+    </div>
+</body>
+
+</html>
