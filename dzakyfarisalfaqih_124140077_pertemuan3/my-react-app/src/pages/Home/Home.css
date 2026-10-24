@@ -1,0 +1,81 @@
+.container {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.screen-mode {
+    display: table;
+    margin: 0 auto 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.screen-mode.mobile {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.screen-mode.desktop {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.stats-row {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.clear-tasks {
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 8px;
+    background-color: #ef4444;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.clear-tasks:hover {
+    background-color: #dc2626;
+}
+
+@media (max-width: 600px) {
+    .stats-row {
+        flex-direction: column;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+    }
+
+    .clear-tasks {
+        padding: 0.75rem 1rem;
+    }
+}
+
+.empty-message {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+    color: #64748b;
+}

@@ -1,0 +1,105 @@
+.book-list {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.book-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border: 1.5px solid var(--color-ink);
+    border-left: 7px solid var(--color-coral);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    box-shadow: 3px 3px 0 var(--color-ink);
+}
+
+.book-card__body {
+    min-width: 0;
+}
+
+.book-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.book-card h3 {
+    margin: 0.55rem 0 0.15rem;
+    overflow-wrap: anywhere;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem;
+}
+
+.book-card p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--color-blue);
+    border-radius: 999px;
+    color: var(--color-blue);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.status-badge--reading {
+    border-style: dashed;
+}
+
+.status-badge--wishlist {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+}
+
+.status-badge--finished {
+    border-color: var(--color-coral);
+    color: var(--color-ink);
+}
+
+.book-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.book-empty {
+    padding: 2.5rem 1rem;
+    border: 1px dashed var(--color-ink);
+    border-radius: var(--radius-card);
+    text-align: center;
+}
+
+.book-empty h3,
+.book-empty p {
+    margin: 0.4rem 0;
+}
+
+.book-empty__mark {
+    color: var(--color-coral);
+    font: 700 2rem Georgia, serif;
+}
+
+@media (max-width: 560px) {
+    .book-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .book-card__actions {
+        width: 100%;
+    }
+
+    .book-card__actions .button {
+        flex: 1;
+    }
+}

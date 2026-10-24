@@ -1,0 +1,125 @@
+.stats-page {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.stats-total,
+.stat-card,
+.completion-card {
+    border: 2px solid var(--color-ink);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+}
+
+.stats-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-blue);
+    color: #fff;
+}
+
+.stats-total strong {
+    font: 700 2.5rem Georgia, serif;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.stat-card {
+    position: relative;
+    display: grid;
+    min-height: 8rem;
+    align-content: space-between;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.stat-card strong {
+    font: 700 2.3rem Georgia, serif;
+}
+
+.stat-card__rule {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.35rem;
+    background: var(--color-blue);
+}
+
+.stat-card__rule--reading {
+    background: var(--color-coral);
+}
+
+.stat-card__rule--wishlist {
+    background: var(--color-ink);
+}
+
+.stat-card__rule--finished {
+    height: 0.55rem;
+    background: var(--color-coral);
+}
+
+.completion-card {
+    padding: 1.25rem;
+}
+
+.completion-card__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.completion-card h3 {
+    margin: 0;
+    font: 700 1.5rem Georgia, serif;
+}
+
+.completion-card__heading>strong {
+    color: var(--color-blue);
+    font: 700 2rem Georgia, serif;
+}
+
+.completion-progress {
+    display: block;
+    width: 100%;
+    height: 1.1rem;
+    margin: 1rem 0 0.6rem;
+    accent-color: var(--color-blue);
+}
+
+.completion-card>p,
+.stats-empty {
+    margin: 0;
+}
+
+.stats-note {
+    margin: -0.5rem 0 0;
+    color: var(--color-ink);
+    font-size: 0.92rem;
+}
+
+.stats-empty {
+    padding: 1rem;
+    border-left: 5px solid var(--color-coral);
+    background: var(--color-paper);
+}
+
+@media (max-width: 700px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
