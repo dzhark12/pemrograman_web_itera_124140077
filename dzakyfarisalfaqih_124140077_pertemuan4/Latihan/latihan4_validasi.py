@@ -1,4 +1,4 @@
-def validasipassword(password):
+def validasi_password(password):
     if len(password) >= 8 and any(char.isdigit() for char in password):
         return "Password valid"
     else:
@@ -11,8 +11,8 @@ password3 = "password"
 password4 = "12345678"
 password5 = "passwordbaruwoi1"
 
-print(validasipassword(password1))
-print(validasipassword(password2))
-print(validasipassword(password3))
-print(validasipassword(password4))
-print(validasipassword(password5))
+print(validasi_password(password1))
+print(validasi_password(password2))
+print(validasi_password(password3))
+print(validasi_password(password4))
+print(validasi_password(password5))
