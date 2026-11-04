@@ -21,3 +21,12 @@ print(
     "# Minat Penelitian: Machine Learning            #\n"
     "#################################################"
 )
+
+print(
+    "#################################################\n"
+    "# Nama Praktikan\t: Dzaky Faris Al Faqih  #\n"
+    "# NIM Praktikan\t\t: 124140077             #\n"
+    "# Angkatan Praktikan\t: 24                    #\n"
+    "# Minat Penelitian\t: Machine Learning      #\n"
+    "#################################################"
+)
