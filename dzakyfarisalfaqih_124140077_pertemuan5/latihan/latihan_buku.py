@@ -10,8 +10,8 @@ class Buku:
         harga_diskon = self.harga_asli - (self.harga_asli * persen / 100)
         return harga_diskon
 
-    def print_detail_buku(self):
-        print (f"Judul: {self.judul} | Penulis: {self.penulis} | Harga: {self.harga_asli} | Jumlah Halaman: {self.jumlah_halaman}")
+    def __str__(self):
+        return f"Judul: {self.judul} | Penulis: {self.penulis} | Harga: {self.harga_asli} | Jumlah Halaman: {self.jumlah_halaman}"
 
-    def print_jumlah_halaman(self):
-        print(f"Jumlah Halaman: {self.jumlah_halaman}") 
+    def __len__(self):
+        return self.jumlah_halaman
