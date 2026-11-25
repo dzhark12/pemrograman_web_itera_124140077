@@ -6,6 +6,7 @@ import zope.sqlalchemy
 # Import model classes untuk memastikan mereka ter-register oleh SQLAlchemy
 from .mahasiswa import Mahasiswa  # Daftarkan model Mahasiswa
 from .mymodel import MyModel      # Model bawaan template
+from .matakuliah import MataKuliah 
 
 # Jalankan configure_mappers setelah seluruh model diimpor
 configure_mappers()

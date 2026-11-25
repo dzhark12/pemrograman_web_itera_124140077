@@ -22,10 +22,7 @@ def mahasiswa_list(request):
 def mahasiswa_detail(request):
     """View untuk melihat detail satu mahasiswa berdasarkan ID di URL"""
     dbsession = request.dbsession
-    try:
-        mahasiswa_id = int(request.matchdict['id'])
-    except ValueError:
-        return HTTPBadRequest(json_body={'error': 'ID mahasiswa harus berupa angka'})
+    mahasiswa_id = int(request.matchdict['id'])
     mahasiswa = dbsession.query(Mahasiswa).filter_by(id=mahasiswa_id).first()
 
     if mahasiswa is None:
@@ -79,10 +76,7 @@ def mahasiswa_add(request):
 def mahasiswa_update(request):
     """View untuk mengupdate data mahasiswa berdasarkan ID"""
     dbsession = request.dbsession
-    try:
-        mahasiswa_id = int(request.matchdict['id'])
-    except ValueError:
-        return HTTPBadRequest(json_body={'error': 'ID mahasiswa harus berupa angka'})
+    mahasiswa_id = int(request.matchdict['id'])
 
     mahasiswa = dbsession.query(Mahasiswa).filter_by(id=mahasiswa_id).first()
     if mahasiswa is None:
@@ -120,10 +114,7 @@ def mahasiswa_update(request):
 def mahasiswa_delete(request):
     """View untuk menghapus mahasiswa berdasarkan ID"""
     dbsession = request.dbsession
-    try:
-        mahasiswa_id = int(request.matchdict['id'])
-    except ValueError:
-        return HTTPBadRequest(json_body={'error': 'ID mahasiswa harus berupa angka'})
+    mahasiswa_id = int(request.matchdict['id'])
 
     mahasiswa = dbsession.query(Mahasiswa).filter_by(id=mahasiswa_id).first()
     if mahasiswa is None:

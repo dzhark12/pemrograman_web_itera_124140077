@@ -9,25 +9,49 @@ from .. import models
 
 
 def setup_models(dbsession):
-    """Menambahkan data awal (seeding) mahasiswa ke database"""
-    mahasiswa1 = models.Mahasiswa(
-        nim='12345',
-        nama='Budi Santoso',
-        jurusan='Teknik Informatika',
-        tanggal_lahir=date(2000, 5, 15),
-        alamat='Jl. Merdeka No. 123, Bandung'
+    # """Menambahkan data awal (seeding) mahasiswa ke database"""
+    # mahasiswa1 = models.Mahasiswa(
+    #     nim='12345',
+    #     nama='Budi Santoso',
+    #     jurusan='Teknik Informatika',
+    #     tanggal_lahir=date(2000, 5, 15),
+    #     alamat='Jl. Merdeka No. 123, Bandung'
+    # )
+
+    # mahasiswa2 = models.Mahasiswa(
+    #     nim='54321',
+    #     nama='Siti Aminah',
+    #     jurusan='Sistem Informasi',
+    #     tanggal_lahir=date(2001, 8, 22),
+    #     alamat='Jl. Mawar No. 45, Jakarta'
+    # )
+
+    mata_kuliah1 = models.MataKuliah(
+        kode_mk='IF25-22014',
+        nama_mk='Pengembangan Aplikasi Web',
+        sks = 3,
+        semester = 5
     )
 
-    mahasiswa2 = models.Mahasiswa(
-        nim='54321',
-        nama='Siti Aminah',
-        jurusan='Sistem Informasi',
-        tanggal_lahir=date(2001, 8, 22),
-        alamat='Jl. Mawar No. 45, Jakarta'
+    mata_kuliah2 = models.MataKuliah(
+        kode_mk='IF25-31020',
+        nama_mk='Pembelajaran Mesin',
+        sks = 3,
+        semester = 7
     )
 
-    dbsession.add(mahasiswa1)
-    dbsession.add(mahasiswa2)
+    mata_kuliah3 = models.MataKuliah(
+        kode_mk='IF25-32025',
+        nama_mk='Penambangan Data',
+        sks = 3,
+        semester = 5
+    )
+
+    # dbsession.add(mahasiswa1)
+    # dbsession.add(mahasiswa2)
+    dbsession.add(mata_kuliah1)
+    dbsession.add(mata_kuliah2) 
+    dbsession.add(mata_kuliah3)
 
 
 def parse_args(argv):
